@@ -221,10 +221,10 @@ Start here: **[docs/cloud-tools/README.md](docs/cloud-tools/README.md)**
 |---------|-------------------|
 | [docs/README.md](docs/README.md) | Full index |
 | [Product](docs/product/askakin.md) | AskAkin, engine, workspace, MCP, identity, interpreter, billing |
-| [Architecture](docs/architecture/system-context.md) | Context, containers, provisioning, gateway, secrets, upstream |
+| [Architecture](docs/architecture/system-context.md) | Context, containers, provisioning, gateway, secrets, [one plane vs five consoles](docs/architecture/one-operations-plane.md), upstream |
 | [ADRs](docs/adr/README.md) | Eighteen decisions (accepted and proposed) |
-| [Security](docs/security/threat-model.md) | Threat model, HITL, authorized use |
-| [Cloud Tools RFC](docs/cloud-tools/README.md) | Catalog, isolation, MCP, licensing, phases, SKUs |
+| [Security](docs/security/threat-model.md) | Threat model, data handling, HITL, authorized use |
+| [Cloud Tools RFC](docs/cloud-tools/README.md) | Catalog, isolation, MCP, licensing, phases, SKUs (this **is** the roadmap) |
 | [Essays](docs/essays/README.md) | Long-form engineering notes |
 | [Operations](docs/operations/reliability.md) | Resume/cancel/health, cost estimates |
 | [FAQ](docs/faq.md) · [Glossary](docs/glossary.md) | Short answers and terms |

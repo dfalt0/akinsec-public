@@ -61,3 +61,4 @@ session TTL. That tab is **Proposed**. See [cloud-tools/ux.md](../cloud-tools/ux
 - [AskAkin](askakin.md)
 - [Security Engine](security-engine.md)
 - [Agents and MCP](agents-mcp-skills.md)
+- [One operations plane vs five consoles](../architecture/one-operations-plane.md)

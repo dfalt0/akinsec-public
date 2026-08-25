@@ -100,5 +100,6 @@ This is a **map of intent**, not a pentest report.
 ## Related
 
 [authorized-use.md](authorized-use.md) ·
+[data-handling.md](data-handling.md) ·
 [responsible-ai.md](responsible-ai.md) ·
 [secure-development.md](secure-development.md)

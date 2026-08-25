@@ -36,6 +36,7 @@ application source is private.
 | [Data isolation](architecture/data-isolation.md) | Shipped |
 | [Secrets model](architecture/secrets-model.md) | Shipped (conceptual) |
 | [Observability](architecture/observability.md) | Partial |
+| [One operations plane](architecture/one-operations-plane.md) | Shipped chrome; Partial modules; Proposed labs |
 | [Upstream LibreChat](architecture/upstream-librechat.md) | Shipped practice |
 
 ## Decisions
@@ -47,14 +48,20 @@ application source is private.
 | Document |
 |----------|
 | [Threat model](security/threat-model.md) |
+| [Data handling](security/data-handling.md) |
 | [Secure development](security/secure-development.md) |
 | [Responsible AI](security/responsible-ai.md) |
 | [Authorized use](security/authorized-use.md) |
 
-## Cloud Tools (Proposed)
+## Cloud Tools / roadmap (Proposed)
+
+There is **no** separate `docs/roadmap/` tree. Now vs next lives in
+status labels plus the Cloud Tools RFC.
 
 [RFC home](cloud-tools/README.md) — catalog, isolation, MCP design,
-licensing, UX, phases, SKU estimates, ZAP vs Burp, Ghidra vs IDA.
+licensing, UX, [phases](cloud-tools/phases.md), SKU estimates, ZAP vs Burp, Ghidra vs IDA.
+
+Credits: [NOTICE.md](../NOTICE.md) (not a second attribution folder).
 
 ## Essays
 
