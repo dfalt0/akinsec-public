@@ -1,0 +1,28 @@
+{
+  "_comment": "SYNTHETIC EXAMPLE — not production telemetry, not a real tenant.",
+  "example": true,
+  "query": "severity:critical AND timestamp:[now-24h TO now]",
+  "engine": "user-scoped Security Engine (v1)",
+  "hits_truncated": true,
+  "severity_summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 5,
+    "low": 11
+  },
+  "alerts": [
+    {
+      "id": "ex-0001",
+      "rule_description": "Example: SSH authentication failure burst on lab-jump-01",
+      "agent_name": "lab-jump-01",
+      "severity": "high"
+    },
+    {
+      "id": "ex-0002",
+      "rule_description": "Example: FIM change on /etc/example.conf",
+      "agent_name": "lab-web-02",
+      "severity": "medium"
+    }
+  ],
+  "agent_instruction": "Do not invent additional CVEs or agents. Empty or small result sets are valid."
+}
