@@ -8,7 +8,7 @@ architecture and product documentation. See
 
 ## Is this LibreChat?
 
-**Lineage yes, product no.** The conversational chassis is
+**Lineage yes, product no.** The conversational UI is
 LibreChat-lineage. AkinSec treats upstream as a **patch source**. The
 brand, SIEM workspace, Security Engine, tenancy overlay, and MCP SIEM
 server are AkinSec. Credits: [NOTICE.md](../NOTICE.md).
@@ -28,7 +28,7 @@ are prohibited and will be technically constrained. Cloud Tools is
 ## Is IDA Pro or Burp Suite already hosted?
 
 No. Do not say they are. OSS-first defaults (ZAP, Wireshark, Ghidra)
-are the honest alpha path. Commercial tools are **BYOL / ISV** stories.
+are the proposed labs default. Commercial tools are **BYOL / ISV** stories.
 [licensing.md](cloud-tools/licensing.md).
 
 ## Is the Wazuh Dashboard included?
@@ -64,5 +64,4 @@ No. There is no public clone-and-run path for the private app.
 ## Who built this?
 
 Mark, GitHub [dfalt0](https://github.com/dfalt0), site
-[dfalt0.com](https://dfalt0.com). Resume mapping:
-[resume-notes.md](resume-notes.md).
+[dfalt0.com](https://dfalt0.com).

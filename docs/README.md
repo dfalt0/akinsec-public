@@ -9,7 +9,7 @@ application source is private.
 | Document | Status | Purpose |
 |----------|--------|---------|
 | [What this repo is](00-what-this-repo-is.md) | — | Boundary: docs, not the app |
-| [Overview](00-overview.md) | mixed | Names, truth paragraph, scale |
+| [Overview](00-overview.md) | mixed | Names, product summary, scale |
 | [FAQ](faq.md) | — | Short answers |
 | [Glossary](glossary.md) | — | SIEM, MCP, HITL, BYOL, … |
 
@@ -17,7 +17,7 @@ application source is private.
 
 | Document | Status |
 |----------|--------|
-| [AskAkin](product/askakin.md) | Shipped (alpha) |
+| [AskAkin](product/askakin.md) | Shipped (v1 engine limits on the engine page) |
 | [Security Engine](product/security-engine.md) | Shipped (v1 limits called out) |
 | [Workspace](product/workspace.md) | Shipped + Partial modules |
 | [Agents, MCP, skills](product/agents-mcp-skills.md) | Shipped |
@@ -75,10 +75,6 @@ cost, prompt injection, n8n history).
 |----------|
 | [Reliability](operations/reliability.md) |
 | [Cost model](operations/cost-model.md) |
-
-## Hiring-manager map
-
-[Resume notes](resume-notes.md)
 
 ## Diagrams
 
