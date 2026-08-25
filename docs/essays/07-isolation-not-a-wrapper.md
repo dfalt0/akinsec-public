@@ -46,6 +46,22 @@ tshark, and Ghidra headless. That reuses locks, hostnames, and
 health waits. It is not good enough for malware. The RFC says that
 out loud so sales cannot skip Phase 5.
 
+## Hostile input is the point of RE labs
+
+SIEM alerts are untrusted **text**. Firmware and malware are untrusted
+**programs**. A wrapper that mounts a customer binary into a shared
+host filesystem is a supply-chain attack on AkinSec itself. Read-only
+mounts, encrypted volumes, shred-on-destroy, and no unrestricted
+egress are not “compliance theater.” They are how you survive the
+first sample that looks like a PDF.
+
+## Same session id
+
+If the human desktop and the MCP adapter are two environments, the
+agent will describe a binary the human cannot see. Broker and GUI
+must share a session id. That is also how audit correlates “approved
+active scan” with packets that actually left.
+
 GPU, Kasm/Guacamole, Firecracker, customer VPC — those are isolation
 **upgrades**, not decorations. If we cannot name the tenant boundary
 on a whiteboard, we do not host the tool.

@@ -57,6 +57,36 @@ plugins.
 Human confirmation sits in front ([ADR-0010](../adr/0010-human-confirmation-before-provision.md))
 because the action has **cost and security** blast radius.
 
+## Why the indexer goes first
+
+OpenSearch with a security plugin is the long pole. Starting manager
+and gateway against an indexer that is still electing a cluster
+produces false failures and panicked retries. The provisioner waits
+on an indexer boot window, then brings manager, then gateway. False
+failures are worse than slow successes: they burn attempt budget.
+
+## Unique hostnames
+
+A shared global hostname with path-based tenancy is how you get
+confused deputies and cookie accidents. Each stack gets a unique
+public gateway hostname derived from a company slug plus a
+disambiguator. This document does not specify the DNS vendor or the
+exact encoding.
+
+## Billing later, abuse now
+
+An entitlement hook can sit in front of create without rewriting
+resume. Until a payment processor exists, **locks and attempt caps
+are the billing system**. That is not cute. Unbounded JVM SIEM
+projects are a real invoice.
+
+## UX is a poller
+
+The browser is not a bash script. Operators see `running`, can
+cancel, and are told that empty indices are OK. A spinner that
+assumes three seconds will lie and retrigger. Confirm-then-poll is
+the product ([ADR-0010](../adr/0010-human-confirmation-before-provision.md)).
+
 Cloud Tools will fail the same way if “Start Ghidra” is a fire-and-
 forget docker run. Copy resume or copy the incident.
 

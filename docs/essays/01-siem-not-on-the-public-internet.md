@@ -61,6 +61,50 @@ Cloud Tools must copy this. A Wireshark box with a public IP and a
 shared password is the same mistake with more packet captures.
 [ADR-0002](../adr/0002-gateway-only-ingress.md).
 
+## Health is not a data dump
+
+A gateway that answers `GET /health` without a bearer token is
+reasonable for a load balancer. The same URL must not return agent
+inventories, index mappings, or plugin status that belongs behind
+auth. Mixing those is how “just a probe” becomes OSINT on a customer
+estate. AskAkin’s rule is blunt: health is liveness; data needs a
+token.
+
+## Allowlist, not a smarter reverse proxy
+
+Transparent proxies fail closed in the wrong direction: a new vendor
+path appears in an upgrade, the proxy forwards it, and suddenly
+cluster settings are a browser call away. Allowlists fail closed in
+the right direction: unknown paths stay unknown. That list is
+**security-sensitive**; this public essay will not inventory it.
+The architectural claim is enough: **named operations only**.
+
+## Tokens
+
+The gateway token is a stack secret. It is presented as a bearer
+header, not as a query string that lands in CDN logs. The control
+plane stores an encrypted copy. Chat, traces, and HITL pause payloads
+are not additional copies. Rotation is an operations policy we still
+owe in writing; storage hygiene is already a ship requirement.
+
+## Enrollment is a different aperture
+
+Classic Wazuh enrollment (manager ports for agents) is **inbound from
+customer endpoints**. That is not the same problem as “analysts query
+alerts.” v1 does not put enrollment on the public gateway topology.
+Customers cannot yet point arbitrary endpoints at a public 1514/1515
+the way an on-prem manager would. A controlled edge is **Proposed**.
+Publishing the gap is better than a blog post that implies agents
+“just connect.”
+
+## What this means for Cloud Tools
+
+Packet capture and web testing **originate outbound** connections.
+The SIEM gateway mostly **pulls** from private manager/indexer. Labs
+therefore need an egress allowlist in addition to an ingress broker.
+The lesson still holds: do not put the raw tool on a public IP with
+a password and a prayer.
+
 The hiring-manager version: **we treated SIEM like production
 infrastructure**, not like a docker-compose demo port-forwarded to
 the world.
