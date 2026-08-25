@@ -31,8 +31,8 @@ storage.
 
 SIEM is **per-user**. Interpreter is **per-org**. Unifying SIEM onto
 the tenant with RBAC is **Proposed**. Until then, two users in the same
-company can have **two engines**. That is operationally honest, not a
-feature slogan.
+company can have **two engines**. That is a v1 limit: SIEM is per user,
+not org-shared.
 
 ## What isolation is not
 

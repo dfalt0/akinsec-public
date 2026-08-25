@@ -15,6 +15,6 @@ essays about labs describe **Proposed** design.
 | [07](07-isolation-not-a-wrapper.md) | Hosting Wireshark and Ghidra is an isolation problem | **Proposed** |
 | [08](08-byol-or-bust.md) | BYOL or bust: Burp and IDA in a SaaS world | **Proposed** |
 | [09](09-authorized-scope-control-plane.md) | Authorized scope as a control plane object | **Proposed** |
-| [10](10-cost-of-jvm-siem.md) | Cost of a per-customer JVM SIEM | **Shipped** lesson |
+| [10](10-cost-of-jvm-siem.md) | Cost of a per-user JVM SIEM | **Shipped** lesson |
 | [11](11-prompt-injection-vs-siem-tools.md) | Prompt injection vs SIEM tools | **Shipped** + design |
 | [12](12-from-n8n-to-control-plane.md) | From n8n+Wazuh experiments to a control plane | Historical public work |

@@ -11,7 +11,7 @@ ACL lineage that is not a weekend prototype. LibreChat already is that
 chassis. Rebuilding it would delay Security Engine and tenancy work
 that is the actual product.
 
-The risk of a fork is brand collapse: hiring managers and customers
+The risk of a fork is brand collapse: readers
 see “ChatGPT clone” and miss the SIEM gateway, provisioner, and MCP
 write audit.
 

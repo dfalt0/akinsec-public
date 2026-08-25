@@ -26,4 +26,4 @@ and gateway allowlists. Publishing it would map attack surface.
   customer data, no default passwords.
 - Forks of public stack images are possible; they still cannot call
   AskAkin’s control plane.
-- Hiring managers can see that “public images” ≠ “open-source product.”
+- Public stack images are not the application source.

@@ -103,8 +103,5 @@ Packet capture and web testing **originate outbound** connections.
 The SIEM gateway mostly **pulls** from private manager/indexer. Labs
 therefore need an egress allowlist in addition to an ingress broker.
 The lesson still holds: do not put the raw tool on a public IP with
-a password and a prayer.
-
-The hiring-manager version: **we treated SIEM like production
-infrastructure**, not like a docker-compose demo port-forwarded to
-the world.
+a password and a prayer. Treat SIEM like production infrastructure,
+not a docker-compose demo port-forwarded to the world.

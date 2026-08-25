@@ -5,7 +5,7 @@
 
 ## Context
 
-Hiring managers and customers will ask “do you have Burp and IDA?”
+Customers will ask whether AkinSec hosts Burp or IDA.
 The honest answer today is **no**. Shipping pirated binaries would end
 the company. Hosting commercial tools without an EULA path would end
 it slower.

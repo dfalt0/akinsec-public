@@ -5,8 +5,8 @@
 
 ## Context
 
-AkinSec already provisions heavy stateful security infrastructure per
-customer and already connects agents to live tools via MCP. The naive
+AkinSec already provisions heavy stateful SIEM infrastructure **per user**
+and already connects agents to live tools via MCP. The naive
 next step — “embed Wireshark in an iframe on a shared box” — throws
 away the only hard-won pattern in the company.
 
@@ -31,8 +31,8 @@ This ADR does not ship labs. It constrains the RFC so alpha cannot
 - Alpha may still use the same PaaS as Security Engine
   ([isolation.md](../cloud-tools/isolation.md)); malware still needs
   microVMs.
-- Proof that this is not vaporware is the **shipped** engine, not a
-  slide.
+- The **shipped** engine is the existence proof for the pattern; labs
+  remain **Proposed**.
 
 ## Related
 

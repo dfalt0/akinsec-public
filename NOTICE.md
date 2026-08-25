@@ -5,7 +5,7 @@ not the product source. The AskAkin application is private.
 
 ## Trademarks
 
-AkinSec and AskAkin are names used by the author (GitHub: [dfalt0](https://github.com/dfalt0)).
+AkinSec and AskAkin are names used by AkinSec (GitHub: [dfalt0](https://github.com/dfalt0)).
 Other names are trademarks of their respective owners. Use here is
 nominative: to describe lineage, integrations, and comparables.
 
@@ -16,12 +16,12 @@ endorsement, partnership, or that AkinSec is a fork of the *product brand*.
 
 | Project | Role in AskAkin | Notes |
 |---------|-----------------|-------|
-| [LibreChat](https://www.librechat.ai/) | Conversational UI, agents, MCP client chassis | AkinSec treats LibreChat as an **upstream patch source**, not the product name. See [docs/architecture/upstream-librechat.md](docs/architecture/upstream-librechat.md). |
+| [LibreChat](https://www.librechat.ai/) | Conversational UI, agents, MCP client | AkinSec treats LibreChat as an **upstream patch source**, not the product name. See [docs/architecture/upstream-librechat.md](docs/architecture/upstream-librechat.md). |
 | [Wazuh](https://wazuh.com/) | SIEM/XDR engine (manager + indexer) behind Security Engine | Managed **4.12-era** stack. AkinSec did not “fork Wazuh.” The Wazuh Dashboard is **not** exposed; AskAkin is the UI. |
-| [OpenSearch](https://opensearch.org/) | Indexer behind Wazuh | Private to the per-customer stack; reached only through the gateway. |
+| [OpenSearch](https://opensearch.org/) | Indexer behind Wazuh | Private to the **per-user** Security Engine stack; reached only through the gateway. |
 | [Model Context Protocol](https://modelcontextprotocol.io/) | Typed tool protocol for agents | SIEM tools shipped; Cloud Tools adapters proposed. |
 | [WorkOS AuthKit](https://workos.com/authkit) | Production OIDC identity | Organization claim maps to tenant. |
-| Railway (and similar PaaS) | Per-tenant compute for Security Engine (and proposed Cloud Tools alpha) | Documented as “cloud PaaS used for per-tenant projects,” not as a vendor tutorial. |
+| Railway (and similar PaaS) | Per-user Security Engine projects and org-scoped interpreter (proposed Cloud Tools on the same class of PaaS) | Documented as “cloud PaaS used for per-project stacks,” not as a vendor tutorial. |
 | MongoDB | Control-plane documents (tenant-scoped) | Schema not published. |
 | Meilisearch | Conversation / message search | |
 | PostgreSQL + pgvector | RAG embeddings | |
@@ -38,7 +38,6 @@ These are **not** the AskAkin application:
 - [dfalt0/akinsec-public](https://github.com/dfalt0/akinsec-public) — this documentation repository.
 - [dfalt0/LibreChat-akinsec](https://github.com/dfalt0/LibreChat-akinsec) — public LibreChat-lineage fork (upstream-shaped; not the private product).
 - [dfalt0/wazuh-n8n](https://github.com/dfalt0/wazuh-n8n) — earlier public experiment integrating Wazuh with n8n. Historical, not the current control plane.
-- [dfalt0/dfalt0](https://github.com/dfalt0/dfalt0) and [dfalt0/portfolio](https://github.com/dfalt0/portfolio) — personal profile. Product architecture lives here.
 
 The AskAkin application source is **private**. Do not treat any public fork as a substitute.
 

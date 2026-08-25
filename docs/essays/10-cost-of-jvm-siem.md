@@ -1,4 +1,4 @@
-# Cost of a per-customer JVM SIEM
+# Cost of a per-user JVM SIEM
 
 **Status:** lesson from **Shipped** Security Engine. Numbers in SKU
 tables are **design estimates**, not invoices.

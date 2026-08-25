@@ -12,16 +12,15 @@ as **lineage**, the same way LibreChat is chassis lineage.
 It does not give you:
 
 - OIDC organization → tenant
-- Per-customer isolated stacks
+- Per-user isolated Security Engine stacks
 - An allowlist gateway
 - Encrypted gateway tokens
 - MCP tools that refuse to invent CVEs
 - A workspace that is the UI instead of Kibana
 
 AskAkin is that control plane. The public n8n work is a rung on the
-ladder, not the product. We link it so a hiring manager can see
-**continuity** (Wazuh, automation, SIEM) without confusing a workflow
-tool for multi-tenant SaaS.
+ladder, not the product. The n8n experiment is lineage, not the
+current control plane.
 
 ```mermaid
 flowchart LR

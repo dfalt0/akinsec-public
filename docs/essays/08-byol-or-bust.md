@@ -2,8 +2,8 @@
 
 **Status: Proposed.** Neither commercial tool is hosted today.
 
-Hiring managers will ask whether AkinSec “includes Burp and IDA.”
-The career-ending answers are “yes” (if untrue) and “we’ll just run
+Customers will ask whether AkinSec “includes Burp and IDA.”
+The wrong answers are “yes” (if untrue) and “we’ll just run
 the trial key in Docker” (if true).
 
 Commercial reverse-engineering and web-testing ISVs did not write

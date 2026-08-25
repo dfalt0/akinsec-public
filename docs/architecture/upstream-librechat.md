@@ -28,7 +28,7 @@ product overlay. Do not treat it as AskAkin.
 
 ## Why not rebrand as LibreChat
 
-Hiring managers should not think this is a theme toggle. The SIEM
+This is not a reskin of LibreChat. The SIEM
 gateway, Railway-class provisioner, WorkOS tenant mapping, and MCP
 write audit are AkinSec work. Credits stay loud in [NOTICE.md](../../NOTICE.md).
 

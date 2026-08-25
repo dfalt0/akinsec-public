@@ -71,7 +71,7 @@ Human confirmation is required before create ([ADR-0010](../adr/0010-human-confi
 
 ## Cloud Tools (**Proposed**)
 
-Same muscle: entitlement, lock/resume, isolated environment, broker
+Same isolation and provisioning pattern: entitlement, lock/resume, isolated environment, broker
 hostname, health wait, cancel, destroy-on-TTL. SKU sizing differs
 (analysis VMs need RAM the way the indexer taught the platform).
 [sku-sizing.md](../cloud-tools/sku-sizing.md).

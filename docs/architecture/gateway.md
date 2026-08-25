@@ -30,7 +30,8 @@ Analyst  →  AskAkin UI / Agent
               ▼
          AskAkin API
               │  looks up user Security Engine record
-              │  decrypts gateway token (never logs it)
+              │  loads encrypted gateway token
+              │  (must not appear in chat)
               ▼
          Gateway (only public hostname)
               │  Authorization: Bearer <gateway token>

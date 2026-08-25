@@ -5,12 +5,13 @@ MCP SIEM tools, OIDC tenancy, and org-scoped code interpreters are
 **implemented**. Hosted Burp/Wireshark/Ghidra/IDA workstations are
 **designed, not shipped**.
 
-This RFC is the public design review packet. It exists because AkinSec
-already knows how to provision isolated security infrastructure and
-how to let agents call **real tools**. Labs are that muscle applied to
-analyst workstations — not a chatbot that draws a picture of Wireshark.
+This RFC is the public design. It exists because AkinSec
+already provisions isolated security infrastructure and
+lets agents call **real tools**. Labs apply that isolation,
+gateway, and MCP pattern to analyst workstations — not a
+chatbot that draws a picture of Wireshark.
 
-Proof the pattern is not vaporware: [Security Engine](../product/security-engine.md).
+Shipped pattern: [Security Engine](../product/security-engine.md).
 Constraint ADRs: [0013](../adr/0013-cloud-tools-same-pattern.md),
 [0014](../adr/0014-authorized-scope-binding.md),
 [0015](../adr/0015-byol-oss-first.md),
@@ -28,7 +29,7 @@ hard to:
 - connect to an AI copilot that can **drive the real tool**, not a toy wrapper
 - shut down when the engagement ends
 
-AskAkin already provisions **heavy, stateful** SIEM stacks per customer
+AskAkin already provisions **heavy, stateful** SIEM stacks **per user**
 and already connects **AI agents to live tools via MCP**. Cloud Tools
 is the same platform applied to **interactive analyst workstations**.
 
@@ -52,7 +53,7 @@ is the same platform applied to **interactive analyst workstations**.
    logs, egress logs. Exportable for IR.
 7. **Cost gates.** Sleep on idle, disk quotas, GPU as add-on.
 
-## Authorized use (copy)
+## Authorized use
 
 AkinSec products are for **defending and authorized testing of systems
 the customer owns or has written permission to test**. Hosted
@@ -132,9 +133,7 @@ Org admin registers https://staging.customer.example as in-scope
   → Agent may request "passive scan"; "active scan" requires HITL click
 ```
 
-## How AI controls tools without being a cartoon
-
-Be concrete and non-weaponized:
+## What the copilot is allowed to do
 
 - **Wireshark/tshark:** “Summarize protocols in this pcap”; “find DNS
   names”; “extract HTTP objects to the artifact store.”

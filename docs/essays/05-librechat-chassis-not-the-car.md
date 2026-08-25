@@ -9,8 +9,8 @@ AkinSec did not beat that by rewriting chat in a weekend.
 
 The mistake would be to **become** LibreChat. Customers would log into
 someone else’s brand. Upstream i18n automation and community CI would
-fight security-workspace chrome. Hiring managers would see a theme
-toggle.
+fight security-workspace chrome. Readers would see a theme
+toggle. This is not a reskin of LibreChat.
 
 So AskAkin treats LibreChat as a **chassis**:
 

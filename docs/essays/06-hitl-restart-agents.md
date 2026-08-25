@@ -46,5 +46,5 @@ SOAR playbooks with HITL are **Proposed**. Autonomous “just remediate
 production” is not a roadmap item; it is a non-goal
 ([ADR-0016](../adr/0016-ai-copilot-hitl.md)).
 
-The resume translation: **tools with side effects got the same
-skepticism as production CD**, not a chatbot plugin.
+Tools with side effects get the same skepticism as production CD,
+not a chatbot plugin.

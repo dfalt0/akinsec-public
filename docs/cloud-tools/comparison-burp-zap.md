@@ -12,7 +12,7 @@
 | Market familiarity | High among OSS/AppSec | Higher among professional pentesters |
 | AkinSec v1 labs | **Default** | **Phase 4 BYOL** |
 
-Burp is often the tool a hiring manager’s AppSec team already bought.
+Burp is often the tool an AppSec team already bought.
 Promising it early without an EULA path is how startups get letters.
 AkinSec’s honest line: **Burp-class workflow**, ZAP in alpha, Burp
 when BYOL is real.

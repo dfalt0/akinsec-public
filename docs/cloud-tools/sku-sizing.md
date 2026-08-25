@@ -7,7 +7,7 @@ Security Engine indexer already taught the platform that **JVM +
 security plugins need real memory** (multi-GB). Carry that lesson into
 Cloud Tools: do not undersize analysis VMs.
 
-Essay: [Cost of a per-customer JVM SIEM](../essays/10-cost-of-jvm-siem.md).
+Essay: [Cost of a per-user JVM SIEM](../essays/10-cost-of-jvm-siem.md).
 
 ## Estimates
 
@@ -17,7 +17,7 @@ Essay: [Cost of a per-customer JVM SIEM](../essays/10-cost-of-jvm-siem.md).
 | Wireshark | 2 vCPU / 8 GB / 100 GB | pcap storage dominates disk |
 | Ghidra | 4 vCPU / 16 GB / 50 GB | decompiler |
 | Malware VM | 4 vCPU / 16 GB / 80 GB + snapshot | **no egress**; microVM |
-| IDA BYOL | similar to Ghidra | license server TBD; not promised |
+| IDA BYOL | similar to Ghidra | license serving is unspecified until Hex-Rays terms are reviewed; IDA is not a planned default SKU |
 
 ## Cost gates (product)
 
