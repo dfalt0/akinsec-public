@@ -5,7 +5,7 @@
 ## Testing philosophy
 
 Tests favor **real logic** — in-memory Mongo, real MCP SDK — over
-theater mocks. Approximate scale: ~900 spec files and ~40 Playwright
+heavy mocks. Approximate scale: ~900 spec files and ~40 Playwright
 e2e specs. This repo does not paste those tests.
 
 ## Monorepo discipline

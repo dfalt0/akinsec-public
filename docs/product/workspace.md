@@ -34,7 +34,7 @@ AkinSec.
 ## Ops (Partial)
 
 Framework cards produce **SCA-based posture rollups when data exists**.
-Otherwise the UX is a placeholder. This is **not** a certified GRC
+Otherwise the UI shows an **empty state**. This is **not** a certified GRC
 product and not an attestation of SOC 2, ISO 27001, PCI, HIPAA, or GDPR.
 
 ## Cloud connectors (Partial)

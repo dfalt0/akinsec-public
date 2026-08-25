@@ -6,7 +6,7 @@ for labs.
 AskAkin is a **copilot**. It is not an autonomous SOC and not an
 autonomous attacker. [ADR-0016](../adr/0016-ai-copilot-hitl.md).
 
-## Rules that are product, not slogans
+## Product rules
 
 1. **Never invent SIEM data.** No fake agents, alerts, or CVEs.
 2. **Unprovisioned engine → onboarding**, not a hallucinated dashboard.

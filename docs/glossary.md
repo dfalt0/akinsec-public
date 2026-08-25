@@ -26,7 +26,7 @@ Terms are used consistently across this repository.
 | **SOAR** | Security orchestration, automation, and response — **Partial/Proposed** playbooks, not a claim of a full SOAR product. |
 | **nsjail** | Linux sandbox used inside the org code interpreter. |
 | **OpenSearch** | Indexer behind Wazuh in the managed stack. |
-| **PaaS** | Platform-as-a-service used today for per-tenant (per-user SIEM) cloud projects. Kubernetes is a planned alternative, not how SIEM is provisioned today. |
+| **PaaS** | Platform-as-a-service used today for **per-user** Security Engine projects and org-scoped interpreter projects. Kubernetes is a planned alternative, not how SIEM is provisioned today. |
 | **Allowlist** | Gateway permits only named operations; not a transparent proxy. |
 | **Fail closed** | Missing encryption config does not fall back to plaintext secrets. |
 | **Resume** | Provisioner redeploys an existing project instead of creating a duplicate. |

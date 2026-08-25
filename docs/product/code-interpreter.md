@@ -51,5 +51,5 @@ Cloud Tools (**Proposed**) is **not** “put Ghidra in the code
 interpreter.” Malware and untrusted binaries need a different isolation
 tier (microVMs). The interpreter proves the platform can provision
 **org-scoped** side stacks with private data stores. Labs reuse that
-operational muscle, not the nsjail process model.
+isolation and provisioning pattern, not the nsjail process model.
 [isolation.md](../cloud-tools/isolation.md).

@@ -1,7 +1,8 @@
 # AskAkin
 
-**Status: Shipped** (product is **alpha**). Cloud Tools workstations are
-**Proposed** and are not described as live SKUs here.
+**Status: Shipped** (Security Engine **v1** limits are on the engine
+page). Cloud Tools workstations are **Proposed** and are not described
+as live SKUs here.
 
 AskAkin is AkinSec’s security workspace: a multi-tenant web application
 where analysts chat with models, run agents and skills, and operate a
@@ -33,10 +34,11 @@ Do not treat this document as a deployment guide.
 
 - Not a consumer chatbot that ships investigation threads to a random
   hosted model with no policy.
-- Not “LibreChat with a coat of paint” as the brand. LibreChat is the
-  **chassis**. See [upstream-librechat.md](../architecture/upstream-librechat.md).
+- Not a reskin of LibreChat. LibreChat is an upstream patch source.
+  See [upstream-librechat.md](../architecture/upstream-librechat.md).
 - Not a certified GRC product. Ops framework cards are posture rollups
-  when SCA data exists; otherwise placeholder UX.
+  when SCA data exists; otherwise an **empty state** or non-live sample
+  presentation when the engine is not provisioned.
 - Not an open-source application. Source is private.
 
 ## How a session fits together

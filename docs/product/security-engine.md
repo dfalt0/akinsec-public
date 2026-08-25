@@ -29,7 +29,7 @@ Essay: [Why a SIEM should not be on the public internet](../essays/01-siem-not-o
                     │  (OIDC session, encrypted metadata)  │
                     └──────────────────┬──────────────────┘
                                        │ HTTPS + bearer
-                                       │ (token never logged)
+                                       │ (token must not appear in chat)
                                        ▼
                     ┌─────────────────────────────────────┐
                     │     Gateway — only public hostname   │
@@ -108,9 +108,10 @@ missing. See [secrets-model.md](../architecture/secrets-model.md) and
 [ADR-0003](../adr/0003-per-stack-secrets.md),
 [ADR-0004](../adr/0004-encrypt-control-plane-copies.md).
 
-## Proof this pattern is not vaporware for Cloud Tools
+## Relation to Cloud Tools
 
-Cloud Tools (**Proposed**) reuses: isolated project, authenticated
-ingress, MCP adapters, encrypted artifacts, HITL for dangerous actions.
-Read [cloud-tools/README.md](../cloud-tools/README.md) with this page
-open.
+Cloud Tools (**Proposed**) is designed to reuse: isolated project,
+authenticated ingress, MCP adapters, encrypted artifacts, HITL for
+dangerous actions. The provisioner, gateway, and MCP SIEM tools are
+implemented; hosted labs are not.
+[cloud-tools/README.md](../cloud-tools/README.md).
