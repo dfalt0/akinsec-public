@@ -1,26 +1,24 @@
-# AkinSec / AskAkin — public architecture
+# AkinSec / AskAkin
 
-**AkinSec** builds AI-operated security infrastructure for businesses.
-**AskAkin** is the product: a multi-tenant security workspace with
-multi-provider AI chat, agents, skills, and a live SIEM surface.
+**AkinSec** is a cybersecurity company. **AskAkin** is the product: a
+multi-tenant security workspace with multi-provider AI chat, agents,
+skills, and a live SIEM surface.
 
-This repository is the **public face** of that work — architecture,
-tenancy, Security Engine, MCP, and the **Cloud Tools** roadmap — so a
-hiring manager or security engineer can evaluate the system **without**
-the private application source.
+This repository is public architecture and product documentation. The
+AskAkin application source is private. The docs describe structure and
+limits. They omit internals that would map a live attack surface.
 
 | | |
 |---|---|
-| Product (login) | [https://app.akinsec.com](https://app.akinsec.com) |
-| Marketing | [https://akinsec.com](https://akinsec.com) |
-| Author | [dfalt0](https://github.com/dfalt0) (Mark) · [dfalt0.com](https://dfalt0.com) |
-| Application source | **Private.** This repo is not a clone of AskAkin. |
+| Product | [https://app.akinsec.com](https://app.akinsec.com) |
+| Company | [https://akinsec.com](https://akinsec.com) |
+| Application source | Private. This repo is not a clone of AskAkin. |
 | Docs license | [CC BY 4.0](LICENSE) (documentation only) |
 
 [![Docs](https://img.shields.io/badge/docs-architecture-0B1F17)](docs/README.md)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-informational)](LICENSE)
 [![Source](https://img.shields.io/badge/application%20source-private-red)](docs/00-what-this-repo-is.md)
-[![Status](https://img.shields.io/badge/product-alpha-yellow)](docs/product/askakin.md)
+[![Security Engine](https://img.shields.io/badge/Security%20Engine-v1-0B1F17)](docs/product/security-engine.md)
 
 ---
 
@@ -34,13 +32,14 @@ constrained (egress allowlists, session audit, kill switch).
 
 ---
 
-## What is real vs what is designed
+## What is implemented vs designed
 
 Security Engine provisioning, the AskAkin workspace, MCP SIEM tools,
-OIDC tenancy, and org-scoped code interpreters are **implemented in the
-private product**. Cloud-hosted Burp/Wireshark/Ghidra/IDA workstations
-are **designed, not shipped**. This repository exists so the design can
-be reviewed in public while the application source stays private.
+OIDC tenancy, and the org-scoped code interpreter are **implemented in
+the private product**. Cloud-hosted Burp/Wireshark/Ghidra/IDA
+workstations are **designed, not shipped**. This repository exists so
+the design can be reviewed in public while the application source stays
+private.
 
 | Capability | Status |
 |---|---|
@@ -49,7 +48,7 @@ be reviewed in public while the application source stays private.
 | Per-user Security Engine (Wazuh manager + indexer + authenticated gateway) | **Shipped** |
 | AkinSec MCP SIEM tools (read + audited single-target writes) | **Shipped** |
 | WorkOS/OIDC, org → tenant, Mongo tenant isolation | **Shipped** |
-| Org-scoped sandboxed code interpreter | **Shipped** |
+| Org-scoped code interpreter (nsjail; host capability requirements) | **Shipped**, isolation depends on host |
 | Public agent enrollment (classic 1514/1515 edge) | **Partial** — v1 limitation |
 | Org-shared SIEM + seat RBAC | **Proposed** (v1 is per-user stacks) |
 | Payment processor / live subscriptions | **Not shipped** (entitlement hook only) |
@@ -76,7 +75,7 @@ flowchart TB
     RAG[RAG API + pgvector]
   end
 
-  subgraph Cloud["Per-tenant cloud projects"]
+  subgraph Cloud["Customer data plane"]
     GW[Security Engine gateway]
     WM[Wazuh manager - private]
     WI[Wazuh indexer - private]
@@ -101,7 +100,7 @@ flowchart TB
 or indexer URLs directly in production. The **gateway is the only public
 SIEM ingress**. Manager and indexer stay on a private network. Gateway
 tokens are encrypted at rest on the control plane; stack passwords stay
-on the cloud project, not in chat logs.
+on the cloud project. Tokens must not appear in chat.
 
 Details: [system context](docs/architecture/system-context.md) ·
 [gateway](docs/architecture/gateway.md) ·
@@ -111,17 +110,18 @@ Details: [system context](docs/architecture/system-context.md) ·
 
 ## Security Engine (one screenful)
 
-When a customer enables Security Engine, the platform provisions an
-**isolated cloud project**: Wazuh manager, Wazuh indexer (OpenSearch),
-and a **public gateway**. That is a **4.12-era managed Wazuh stack**,
-not a Wazuh fork.
+When a user enables Security Engine, the platform provisions an
+**isolated cloud project for that user**: Wazuh manager, Wazuh indexer
+(OpenSearch), and a **public gateway**. That is a **4.12-era managed
+Wazuh stack**, not a Wazuh fork.
 
 ```text
 Analyst  →  AskAkin UI / Agent
               │  JWT session (OIDC-backed)
               ▼
          AskAkin API
-              │  decrypts gateway token (never logs it)
+              │  loads an encrypted gateway token from the control plane
+              │  (tokens must not appear in chat)
               ▼
          Gateway (only public hostname)
               │  Bearer token
@@ -129,7 +129,7 @@ Analyst  →  AskAkin UI / Agent
               └── allowlisted indexer search →  Wazuh indexer (private DNS)
 ```
 
-**v1 honesty:** stacks are **per user**, not yet org-shared. Agent
+**v1 limits:** stacks are **per user**, not org-shared. Agent
 enrollment ports are **not** publicly exposed the way a classic on-prem
 manager would be. Billing can **enforce** entitlement; payments are
 **not live**.
@@ -166,14 +166,9 @@ onboarding. Writes are **audited** and **single-target** (restart one
 agent; assign one agent to an existing group). Bulk destructive SIEM
 actions are out of v1 scope.
 
-| Tool | Class |
-|------|-------|
-| `security_engine_status` | read |
-| `list_agents` / `get_agent_detail` / summaries | read |
-| `search_alerts` / `alerts_severity_summary` | read |
-| `threats_summary` | read |
-| saved searches (`list` / `get` / `run` / `create` / `update` / `delete`) | read/write |
-| `restart_agent` / `assign_agent_group` | audited write |
+The AkinSec MCP server exposes status, inventory, alert search, threats,
+saved searches, and two audited single-target writes. Full catalog:
+[agents-mcp-skills.md](docs/product/agents-mcp-skills.md).
 
 Same operations layer; **REST for the first-party UI**, **MCP for the model**.
 [ADR-0008](docs/adr/0008-mcp-and-rest-facades.md)
@@ -185,8 +180,7 @@ Same operations layer; **REST for the first-party UI**, **MCP for the model**.
 Production login is **OIDC (WorkOS AuthKit)**. An organization claim
 maps to `tenantId`. A Mongo plugin injects tenant scope into queries
 and **rejects cross-tenant writes**. Code interpreter stacks are
-**org-scoped**. Security Engine v1 remains **per-user** — an honest
-limitation, not a slogan.
+**org-scoped**. Security Engine v1 is **per user**, not org-shared.
 
 [Identity](docs/product/identity-tenancy.md) ·
 [Data isolation](docs/architecture/data-isolation.md) ·
@@ -194,22 +188,19 @@ limitation, not a slogan.
 
 ---
 
-## Cloud Tools (proposed — flagship RFC)
+## Cloud Tools (proposed)
 
-The next platform bet reuses the **same muscle** already shipped for
-SIEM: per-customer isolated projects, authenticated gateway/broker,
-MCP adapters, encrypted artifacts, human-in-the-loop for dangerous
-actions.
+The design reuses the same isolation, gateway, and MCP pattern as
+Security Engine: isolated projects, authenticated gateway/broker, MCP
+adapters, encrypted artifacts, human-in-the-loop for dangerous actions.
+The provisioner, gateway, and MCP SIEM tools are implemented; hosted
+labs are not.
 
 **Classes (comparables, not shipped SKUs):**
 
 - Web testing — OWASP ZAP default; Burp Suite **BYOL** if an ISV path exists
 - Packet analysis — Wireshark / tshark on **customer-owned** captures
 - Reverse engineering — Ghidra default; IDA Pro **BYOL only if Hex-Rays terms allow hosted use**
-
-**Not vaporware-adjacent SIEM.** The provisioner, gateway, and MCP loop
-already exist. Cloud Tools is that pattern applied to analyst
-workstations. It is still **Proposed**.
 
 Start here: **[docs/cloud-tools/README.md](docs/cloud-tools/README.md)**
 
@@ -226,17 +217,17 @@ Start here: **[docs/cloud-tools/README.md](docs/cloud-tools/README.md)**
 | [Security](docs/security/threat-model.md) | Threat model, data handling, HITL, authorized use |
 | [Cloud Tools RFC](docs/cloud-tools/README.md) | Catalog, isolation, MCP, licensing, phases, SKUs (this **is** the roadmap) |
 | [Essays](docs/essays/README.md) | Long-form engineering notes |
-| [Operations](docs/operations/reliability.md) | Resume/cancel/health, cost estimates |
+| [Operations](docs/operations/reliability.md) | Provision resume/cancel/health, cost estimates |
 | [FAQ](docs/faq.md) · [Glossary](docs/glossary.md) | Short answers and terms |
 
 ---
 
-## Upstream (unmistakable credits)
+## Upstream
 
-AskAkin’s conversational chassis is a **LibreChat-lineage** application.
-AkinSec is **not** the LibreChat project and does **not** open-source
-the product. Detection is a **managed Wazuh** stack. Identity is
-**WorkOS AuthKit**. See [NOTICE.md](NOTICE.md) and
+AskAkin’s conversational UI is **LibreChat-lineage**. AkinSec is
+**not** the LibreChat project and does **not** open-source the product.
+Detection is a **managed Wazuh** stack. Identity is **WorkOS AuthKit**.
+See [NOTICE.md](NOTICE.md) and
 [upstream notes](docs/architecture/upstream-librechat.md).
 
 Related public work (not the app):
@@ -249,9 +240,8 @@ Related public work (not the app):
 
 Detection content, tenant isolation internals, gateway allowlists, and
 provisioner credentials are **security-sensitive**. Public architecture
-can still demonstrate engineering quality. Customers and employers can
-evaluate the approach; attackers do not get a free map of every
-internal path.
+can still describe structure and limits without publishing a map of
+every internal path.
 
 ### What this repo is not
 
@@ -265,9 +255,9 @@ internal path.
 
 ## Contact
 
+- App: [https://app.akinsec.com](https://app.akinsec.com)
+- Company: [https://akinsec.com](https://akinsec.com)
 - GitHub: [dfalt0](https://github.com/dfalt0)
 - Site: [https://dfalt0.com](https://dfalt0.com)
-- App: [https://app.akinsec.com](https://app.akinsec.com)
-- Company site: [https://akinsec.com](https://akinsec.com)
 
 Vulnerability reports: [SECURITY.md](SECURITY.md)
