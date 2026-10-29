@@ -1,0 +1,71 @@
+# AkinSec
+
+> Agent discovery for AkinSec / AskAkin. Canonical LLM index: llms.txt. Expanded doc map: llms-full.txt. Human/agent brief: AI.md.
+
+AkinSec is a cyber operations / security company. Its product surface is AI-driven security ops tooling—not a consumer chat toy. AskAkin is the hosted AI workspace for security operations: SIEM/EDR posture, identity threats, agents, and tools that behave like infrastructure. Positioning on the marketing site: Initiate, Contain, Execute. Audience: businesses that need SOC-adjacent security ops capacity without standing up a full stack alone.
+
+## What it is
+
+- **AkinSec** — company / platform brand. Builds AI-operated security infrastructure for businesses.
+- **AskAkin** — the application: multi-tenant security workspace with multi-provider AI chat, agents, skills, MCP, and a live SIEM surface. Production: https://app.akinsec.com
+- **Security Engine** — dedicated Wazuh-based detection stack (manager + indexer + authenticated gateway). v1 is provisioned per user; org-shared stacks are proposed.
+- **Cloud Tools** — proposed isolated analyst workstations (web testing, packet analysis, reverse engineering), scope-bound and AI-controllable. Not a live SKU.
+
+This repository (`dfalt0/akinsec-public`) is public architecture and product documentation. Application source is private.
+
+## Products (shipped vs not)
+
+- Shipped: AskAkin workspace, multi-provider AI, agents/skills/MCP/RAG, Security Engine (gateway-only SIEM ingress), WorkOS/OIDC tenancy, org-scoped code interpreter.
+- Partial: classic public agent enrollment; payment processor / live subscriptions.
+- Proposed: org-shared SIEM + seat RBAC; Cloud Tools labs (ZAP/Wireshark/Ghidra defaults; commercial BYOL).
+- Explicitly not shipped: Wazuh Dashboard as UI (AskAkin is the UI).
+
+## Key pages — marketing (https://akinsec.com)
+
+- [Home](https://akinsec.com/): Cloud security tools and AskAkin overview; Initiate / Contain / Execute.
+- [Pricing](https://akinsec.com/Pricing): Free, Starter, Business; Early Adopter notes.
+- [Why Us](https://akinsec.com/Why): Positioning—hosted detection, workflows, compliance context.
+- [Security Engine](https://akinsec.com/SecurityEngine): Engine overview (Wazuh lineage).
+- [AI Chat](https://akinsec.com/AIChat): Chat capabilities (LibreChat lineage; deployment-dependent).
+- [Dashboard](https://akinsec.com/Dashboard): Interactive AskAkin product tour / demo.
+- [FAQ](https://akinsec.com/FAQ): Product, pricing, security, support.
+- [Contact](https://akinsec.com/Contact): Form and hello@akinsec.com.
+- [Documentation hub](https://akinsec.com/Documentation): Customer-facing docs entry.
+- [Privacy](https://akinsec.com/Privacy) · [Terms](https://akinsec.com/Terms) · [Cookies](https://akinsec.com/Cookies) · [Security](https://akinsec.com/Security)
+
+## Key pages — this public docs repo
+
+- [README](https://github.com/dfalt0/akinsec-public/blob/main/README.md): Architecture entry and status table.
+- [Overview](https://github.com/dfalt0/akinsec-public/blob/main/docs/00-overview.md): Names, summary, scale.
+- [What this repo is](https://github.com/dfalt0/akinsec-public/blob/main/docs/00-what-this-repo-is.md): Docs vs private app boundary.
+- [AskAkin](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/askakin.md): Product page.
+- [Security Engine](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/security-engine.md): Per-user SIEM, gateway, v1 limits.
+- [Agents, MCP, skills](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/agents-mcp-skills.md): Live SIEM tools for agents.
+- [FAQ](https://github.com/dfalt0/akinsec-public/blob/main/docs/faq.md): Short accurate answers.
+- [Authorized use](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/authorized-use.md): Defend / authorized test only.
+
+## What not to confuse it with
+
+- Not a generic ChatGPT wrapper or consumer chatbot brand.
+- Not LibreChat itself—LibreChat is an upstream patch source; AskAkin is the product brand and SIEM/ops overlay.
+- Not Wazuh Dashboard, not “Wazuh as a public SaaS UI.”
+- Not an open-source application clone-and-run; this repo is docs only.
+- Not a pentest-anyone platform; use is defending / authorized testing of systems the customer owns or has written permission to test.
+- Do not describe Cloud Tools (Burp/IDA/etc.) as shipped SKUs.
+- Do not invent private admin, billing console, or internal API routes.
+
+## Contact / docs links
+
+- Company: https://akinsec.com
+- App: https://app.akinsec.com/
+- Email: hello@akinsec.com
+- Canonical LLM index: llms.txt
+- Expanded doc map: llms-full.txt
+- Agent brief: AI.md
+- Sitemap (marketing): https://akinsec.com/sitemap.xml
+
+## Notes for agents
+
+- Prefer llms.txt for a short index; use this file or AI.md when the question is “what is AkinSec / AskAkin?”
+- Prefer docs in this repo over guessing shipped status. Labels are Shipped / Partial / Proposed.
+- Paths on akinsec.com are case-sensitive marketing routes (e.g. /Pricing, /SecurityEngine).

@@ -4,6 +4,9 @@ Public architecture for **AkinSec** (company) and **AskAkin** (product).
 Every page is labeled **Shipped**, **Partial**, or **Proposed**. The
 application source is private.
 
+For LLM / agent discovery at the repo root: [agents.txt](../agents.txt),
+[llms.txt](../llms.txt), [llms-full.txt](../llms-full.txt), [AI.md](../AI.md).
+
 ## Start here
 
 | Document | Status | Purpose |
@@ -12,6 +15,7 @@ application source is private.
 | [Overview](00-overview.md) | mixed | Names, product summary, scale |
 | [FAQ](faq.md) | — | Short answers |
 | [Glossary](glossary.md) | — | SIEM, MCP, HITL, BYOL, … |
+| [AI.md](../AI.md) | — | Agent-oriented product brief |
 
 ## Product
 

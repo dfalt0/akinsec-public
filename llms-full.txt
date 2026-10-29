@@ -1,0 +1,108 @@
+# AkinSec (full)
+
+> Expanded LLM index for AkinSec / AskAkin public docs. Short index: llms.txt. Product brief: agents.txt and AI.md.
+
+AkinSec builds AskAkin—an AI workspace for security operations (hosted SIEM/EDR posture, identity threats, agent tooling). Docs here describe architecture and limits; application source stays private. Prefer Shipped / Partial / Proposed labels over marketing hype.
+
+- Company: https://akinsec.com
+- App: https://app.akinsec.com
+- Contact: hello@akinsec.com
+- Short index: llms.txt
+- Agent discovery: agents.txt
+- Brief: AI.md
+
+## Core
+
+- [AI.md](https://github.com/dfalt0/akinsec-public/blob/main/AI.md): Agent-oriented product brief
+- [agents.txt](https://github.com/dfalt0/akinsec-public/blob/main/agents.txt): Discovery + key pages
+- [llms.txt](https://github.com/dfalt0/akinsec-public/blob/main/llms.txt): Compact index
+- [README](https://github.com/dfalt0/akinsec-public/blob/main/README.md): Architecture entry
+- [Docs index](https://github.com/dfalt0/akinsec-public/blob/main/docs/README.md): Full TOC
+- [Overview](https://github.com/dfalt0/akinsec-public/blob/main/docs/00-overview.md)
+- [What this repo is](https://github.com/dfalt0/akinsec-public/blob/main/docs/00-what-this-repo-is.md)
+- [FAQ](https://github.com/dfalt0/akinsec-public/blob/main/docs/faq.md)
+- [Glossary](https://github.com/dfalt0/akinsec-public/blob/main/docs/glossary.md)
+
+## Product
+
+- [AskAkin](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/askakin.md)
+- [Security Engine](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/security-engine.md)
+- [Workspace](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/workspace.md)
+- [Agents, MCP, skills](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/agents-mcp-skills.md)
+- [Identity and tenancy](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/identity-tenancy.md)
+- [Code interpreter](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/code-interpreter.md)
+- [Billing](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/billing.md)
+
+## Architecture
+
+- [System context](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/system-context.md)
+- [Containers](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/containers.md)
+- [Provisioning](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/provisioning.md)
+- [Gateway](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/gateway.md)
+- [Data isolation](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/data-isolation.md)
+- [Secrets model](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/secrets-model.md)
+- [Observability](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/observability.md)
+- [One operations plane](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/one-operations-plane.md)
+- [Upstream LibreChat](https://github.com/dfalt0/akinsec-public/blob/main/docs/architecture/upstream-librechat.md)
+
+## Decisions (ADRs)
+
+- [ADR index](https://github.com/dfalt0/akinsec-public/blob/main/docs/adr/README.md): Eighteen architecture decision records
+
+## Security
+
+- [Threat model](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/threat-model.md)
+- [Data handling](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/data-handling.md)
+- [Secure development](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/secure-development.md)
+- [Responsible AI](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/responsible-ai.md)
+- [Authorized use](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/authorized-use.md)
+
+## Cloud Tools (Proposed)
+
+- [RFC home](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/README.md)
+- [Catalog](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/catalog.md)
+- [Isolation](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/isolation.md)
+- [MCP design](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/mcp-design.md)
+- [Licensing](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/licensing.md)
+- [Phases](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/phases.md)
+
+## Essays
+
+- [Essay index](https://github.com/dfalt0/akinsec-public/blob/main/docs/essays/README.md): Engineering notes (gateway, provisioning, tenancy, MCP, fork strategy, HITL, isolation, BYOL, prompt injection, …)
+
+## Operations
+
+- [Reliability](https://github.com/dfalt0/akinsec-public/blob/main/docs/operations/reliability.md)
+- [Cost model](https://github.com/dfalt0/akinsec-public/blob/main/docs/operations/cost-model.md)
+
+## Marketing site pages
+
+- [Home](https://akinsec.com/)
+- [Pricing](https://akinsec.com/Pricing)
+- [Why Us](https://akinsec.com/Why)
+- [Security Engine](https://akinsec.com/SecurityEngine)
+- [AI Chat](https://akinsec.com/AIChat)
+- [Dashboard](https://akinsec.com/Dashboard)
+- [FAQ](https://akinsec.com/FAQ)
+- [Contact](https://akinsec.com/Contact)
+- [Careers](https://akinsec.com/Careers): Stub; no open roles listed
+- [Documentation](https://akinsec.com/Documentation)
+- [Workspace overview](https://akinsec.com/Documentation/workspace)
+- [Sign-in & accounts](https://akinsec.com/Documentation/sign-in)
+- [Alerts & monitoring](https://akinsec.com/Documentation/alerts-monitoring)
+- [AI models & usage](https://akinsec.com/Documentation/ai-models)
+- [Integrations](https://akinsec.com/Documentation/integrations)
+- [Plans & billing](https://akinsec.com/Documentation/plans-billing)
+- [Refunds](https://akinsec.com/Documentation/refunds)
+- [Privacy & security (docs)](https://akinsec.com/Documentation/privacy-security)
+- [Support](https://akinsec.com/Documentation/support)
+- [Privacy Policy](https://akinsec.com/Privacy)
+- [Terms of Service](https://akinsec.com/Terms)
+- [Cookies](https://akinsec.com/Cookies)
+- [Security](https://akinsec.com/Security)
+- [AskAkin app](https://app.akinsec.com/)
+- [Sitemap](https://akinsec.com/sitemap.xml)
+
+## Optional / stubs (may be noindex)
+
+- [Setup](https://akinsec.com/Setup): Points readers to Documentation

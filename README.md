@@ -14,11 +14,13 @@ limits. They omit internals that would map a live attack surface.
 | Company | [https://akinsec.com](https://akinsec.com) |
 | Application source | Private. This repo is not a clone of AskAkin. |
 | Docs license | [CC BY 4.0](LICENSE) (documentation only) |
+| AI / agent index | [agents.txt](agents.txt) · [llms.txt](llms.txt) · [AI.md](AI.md) |
 
 [![Docs](https://img.shields.io/badge/docs-architecture-0B1F17)](docs/README.md)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-informational)](LICENSE)
 [![Source](https://img.shields.io/badge/application%20source-private-red)](docs/00-what-this-repo-is.md)
 [![Security Engine](https://img.shields.io/badge/Security%20Engine-v1-0B1F17)](docs/product/security-engine.md)
+[![llms.txt](https://img.shields.io/badge/llms.txt-index-0B1F17)](llms.txt)
 
 ---
 

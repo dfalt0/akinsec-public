@@ -1,0 +1,17 @@
+# AkinSec public docs repo — https://github.com/dfalt0/akinsec-public
+# This file documents intent for mirrors and agent crawlers.
+# On GitHub.com, repository crawl policy is controlled by GitHub, not this file.
+
+User-agent: *
+Allow: /
+
+# AI / LLM discovery (prefer these over inventing product facts)
+Allow: /agents.txt
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /AI.md
+
+# Marketing site AI indexes (canonical product pages live there)
+# https://akinsec.com/llms.txt
+# https://akinsec.com/agents.txt
+# https://akinsec.com/sitemap.xml

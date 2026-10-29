@@ -1,0 +1,51 @@
+# AkinSec
+
+> AkinSec is a cyber operations company. AskAkin is its AI security-ops workspace: hosted SIEM/EDR posture, identity threats, agents, and tools—built like infrastructure, not a chat toy. Positioning: Initiate, Contain, Execute.
+
+This repository is public product and architecture documentation. Application source is private. Marketing site: https://akinsec.com · App: https://app.akinsec.com · Contact: hello@akinsec.com
+
+Read status labels carefully: **Shipped**, **Partial**, or **Proposed**. Cloud Tools labs and live payments are not shipped.
+
+## Start here
+
+- [Agent brief (AI.md)](https://github.com/dfalt0/akinsec-public/blob/main/AI.md): What AkinSec / AskAkin are, audience, and confusion traps
+- [agents.txt](https://github.com/dfalt0/akinsec-public/blob/main/agents.txt): Discovery mirror with product facts and key URLs
+- [README](https://github.com/dfalt0/akinsec-public/blob/main/README.md): Architecture overview and shipped capability table
+- [Overview](https://github.com/dfalt0/akinsec-public/blob/main/docs/00-overview.md): Names, product summary, technical scale
+- [What this repo is](https://github.com/dfalt0/akinsec-public/blob/main/docs/00-what-this-repo-is.md): Docs vs private app boundary
+- [FAQ](https://github.com/dfalt0/akinsec-public/blob/main/docs/faq.md): Short accurate answers
+
+## Product
+
+- [AskAkin](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/askakin.md): Security workspace product page
+- [Security Engine](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/security-engine.md): Per-user Wazuh stack + gateway (v1 limits)
+- [Workspace](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/workspace.md): Chat, Alerts, Devices, Threats, Ops, Cloud, Config
+- [Agents, MCP, skills](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/agents-mcp-skills.md): Live SIEM tools for agents
+- [Identity and tenancy](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/identity-tenancy.md): WorkOS/OIDC → tenant isolation
+- [Billing](https://github.com/dfalt0/akinsec-public/blob/main/docs/product/billing.md): Entitlement hook only; payments not live
+
+## Marketing site
+
+- [Home](https://akinsec.com/): Initiate, Contain, Execute; AskAkin overview
+- [Pricing](https://akinsec.com/Pricing): Free, Starter, Business
+- [Why Us](https://akinsec.com/Why): Hosted detection and workflows positioning
+- [Security Engine](https://akinsec.com/SecurityEngine): Customer-facing engine page
+- [Documentation](https://akinsec.com/Documentation): Customer docs hub
+- [FAQ](https://akinsec.com/FAQ): Support-oriented FAQ
+- [Contact](https://akinsec.com/Contact): hello@akinsec.com
+- [AskAkin app](https://app.akinsec.com/): Live workspace sign-in CTA
+
+## Security and authorized use
+
+- [Authorized use](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/authorized-use.md): Defend / authorized testing only
+- [Threat model](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/threat-model.md): Public-safe threat framing
+- [Responsible AI](https://github.com/dfalt0/akinsec-public/blob/main/docs/security/responsible-ai.md): HITL and tool limits
+- [Marketing Privacy](https://akinsec.com/Privacy) · [Terms](https://akinsec.com/Terms) · [Security](https://akinsec.com/Security)
+
+## Optional
+
+- [llms-full.txt](https://github.com/dfalt0/akinsec-public/blob/main/llms-full.txt): Full doc map (architecture, ADRs, essays, Cloud Tools RFC)
+- [Docs index](https://github.com/dfalt0/akinsec-public/blob/main/docs/README.md): Complete documentation table of contents
+- [Cloud Tools RFC](https://github.com/dfalt0/akinsec-public/blob/main/docs/cloud-tools/README.md): Proposed labs—not shipped
+- [Glossary](https://github.com/dfalt0/akinsec-public/blob/main/docs/glossary.md): SIEM, MCP, HITL, BYOL, …
+- [Sitemap](https://akinsec.com/sitemap.xml): Marketing crawl map
